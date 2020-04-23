@@ -1,14 +1,13 @@
 // 
 // puerto
 //
-
-
 process.env.PORT = process.env.PORT || 3000;
 
 //
 // Entorno
 //
 process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
+
 
 //
 // Base de datos
@@ -20,8 +19,24 @@ if (process.env.NODE_ENV === 'dev') {
 } else {
     urlDB = process.env.MONGO_URI;
 }
-
-// urlDB = 'mongodb+srv://mjmendez8:OTOWGjZKlMg5fv3J@cluster0-cptar.mongodb.net/cafe';
-
-
 process.env.URLDB = urlDB;
+
+
+
+//
+// Vencimiento del token
+// 60 Seg
+// 60 Min
+// 24 Horas
+// 30 dias
+//
+process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+
+
+
+
+//
+// SEED del token
+//
+
+process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
