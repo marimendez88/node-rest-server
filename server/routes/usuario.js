@@ -12,6 +12,7 @@ const { verificaToken, verificaAdmin_Role } = require('../middlewares/autenticac
 
 
 //GET
+//Muestra los usuarios
 
 app.get('/usuario', verificaToken, (req, res) => {
 
@@ -47,7 +48,7 @@ app.get('/usuario', verificaToken, (req, res) => {
 });
 
 
-
+//Crea una usuario
 app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
     let body = req.body;
 
@@ -80,7 +81,7 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
 
 });
 
-
+//Actualiza un usuario
 app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) {
 
     let id = req.params.id;
